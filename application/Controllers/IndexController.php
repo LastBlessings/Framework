@@ -14,8 +14,9 @@ class IndexController
 
     }
 
-    public function indexHandler()
+    public function indexHandler($handler)
     {
         echo "handler";
+        echo $handler;
     }
 }

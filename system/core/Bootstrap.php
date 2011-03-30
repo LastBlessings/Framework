@@ -31,5 +31,5 @@ setReporting();
 /*
  *
  */
-$ROUTER = load_class('Router');
+$ROUTER =& load_class('Router');
 $ROUTER->route();

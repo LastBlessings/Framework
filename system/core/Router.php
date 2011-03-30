@@ -35,10 +35,10 @@ class Router
 
     private function _set_routing()
     {
-        if (!$this->_validate_request()) {
+        /*if (!$this->_validate_request()) {
             $this->_set_default_controller();
             return;
-        }
+        }*/
 
         $controller = $this->uri->get_controller() . 'Controller';
         $module = $this->uri->get_module() . 'Handler';
@@ -46,8 +46,7 @@ class Router
         require_once ROOT . DS . APPS . DS . 'Controllers' . DS . $this->uri->get_controller() . 'Controller.php';
 
         $controller = new $controller;
-        $controller->$module();// TODO: Params
-
+        call_user_func_array( array($controller, $module), $this->uri->get_params());//FUTURE: change the way calling functions
     }
 
     private function _validate_request() //TODO
