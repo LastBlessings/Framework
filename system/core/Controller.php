@@ -8,8 +8,12 @@
 
 class Controller
 {
+
+    protected $view;
+
     function __construct()
     {
-
+        $this->view =& load_class('View');
+        $this->view->set_default_path(TEMPLATE_PATH);
     }
 }

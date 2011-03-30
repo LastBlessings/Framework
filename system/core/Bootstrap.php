@@ -11,7 +11,7 @@
  * Load configuration file
  * ------------------------
  */
-require_once ROOT . DS . FRAMEWORK . DS . 'config' . DS . 'config.php';
+require_once ROOT . DS . APPS . DS . 'config' . DS . 'config.php'; //TODO: Class for this
 
 /*
  * ----------------------

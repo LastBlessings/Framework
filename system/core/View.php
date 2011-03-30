@@ -13,6 +13,7 @@ class View
     private $vars = array();
     private $vars_type = 'PHP_STYLE';
     private $templates = array();
+    private $default_path;
 
     public function __construct()
     {
@@ -76,6 +77,17 @@ class View
     }
 
     /**
+     * Sets the default path to the template
+     * @param  $default_path string The default path
+     * @return bool
+     */
+    public function set_default_path($default_path)
+    {
+        $this->default_path = $default_path;
+        return TRUE;
+    }
+
+    /**
      * @param  $path_to_the_template string The absolute path to the template
      * @return bool|int
      */
@@ -95,10 +107,18 @@ class View
      */
     private function check_path($path_to_the_template)
     {
-        if (file_exists($path_to_the_template)) {
-            return TRUE;
+        if (isset($this->default_path)) {
+            if (file_exists($this->default_path . DS . $path_to_the_template)) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
         } else {
-            return FALSE;
+            if (file_exists($path_to_the_template)) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
         }
     }
 
@@ -132,7 +152,11 @@ class View
             ob_start();
             foreach ($this->templates as $template)
             {
-                include $template;
+                if (isset($this->default_path)) {
+                    include $this->default_path . DS .$template;
+                } else {
+                    include $template;
+                }
             }
             $contents = ob_get_contents();
             ob_end_clean();
@@ -148,7 +172,8 @@ class View
     /**
      * @return Renders and display the template directly to the browser.
      */
-    public function display() {
+    public function display()
+    {
         echo $this->render();
         return;
     }

@@ -35,7 +35,7 @@ class URI
 
     public function get_controller()
     {
-        if ($this->uri_parsed AND !empty($this->fragments)) {
+        if ($this->uri_parsed AND !empty($this->fragments[0])) {
             return $this->fragments[0];
         } else {
             return FALSE;
@@ -44,8 +44,8 @@ class URI
 
     public function get_module()
     {
-        if ($this->uri_parsed AND !empty($this->fragments)) {
-            return $this->fragments[1];
+        if ($this->uri_parsed AND !empty($this->fragments[1])) {
+                return $this->fragments[1];
         } else {
             return FALSE;
         }
