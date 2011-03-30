@@ -7,16 +7,15 @@
  * Index Controller
  */
 
-class IndexController
+class IndexController extends Controller
 {
     public function __construct()
     {
-
+        parent::__construct();
     }
 
-    public function indexHandler($handler)
+    public function indexHandler()
     {
-        echo "handler";
-        echo $handler;
+        echo "Index Page";
     }
 }

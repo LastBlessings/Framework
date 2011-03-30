@@ -28,7 +28,7 @@ function __autoload($class)
     }
 }
 
-function load_class($class, $directory = 'core')
+function load_class($class, $directory = 'core') //Might use the Registry
 {
     static $classes = array();
 

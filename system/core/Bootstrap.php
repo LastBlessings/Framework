@@ -29,7 +29,9 @@ require_once ROOT . DS . FRAMEWORK . DS . CORE . DS . 'common.php';
 setReporting();
 
 /*
- *
+ *------------------------------------------------------------
+ * Load the Router class and redirect to the right Controller
+ * -----------------------------------------------------------
  */
 $ROUTER =& load_class('Router');
 $ROUTER->route();
