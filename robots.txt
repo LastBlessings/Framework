@@ -1,0 +1,34 @@
+user-agent: *
+crawl-delay: 5
+
+# Files
+disallow: /manifest
+disallow: /pkg-info
+disallow: /.htaccess
+disallow: /.ht
+disallow: /web.config
+disallow: /.cvsignore
+disallow: /.gitmodules
+disallow: /.gitignore
+disallow: /.svnignore
+
+# Folders
+disallow: /framework/
+disallow: /svn/
+disallow: /cvs/
+disallow: /git/
+
+# Optionals
+Disallow: /_*
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.ico$
+Disallow: /*.ph$
+Disallow: /*.inf$
+disallow: /.htpasswd
+disallow: /.passwd
+disallow: /.conf
+disallow: /etc/
+
+# Sitemap
+sitemap: /sitemap.xml
