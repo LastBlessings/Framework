@@ -1,10 +1,10 @@
-*NO NAME*-FRAMEWORK
+*NO NAME*-FRAMEWORKS_PATH
 
 FOLDER STRUCTURE
 
-==> application - application specific code
+==> applications - application specific code
 	    ==> assets - application specific js/css/images
-==> system - framwork folder
+==> framework - framework folder
 	    ==> config - database/server configuration
 	    ==> db - database backups
 	    ==> library - framework code

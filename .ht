@@ -1,0 +1,27 @@
+location ~ /\.ht
+{
+	deny all;
+}
+
+location ~ /\.htaccess
+{
+	deny all;
+}
+
+location ~ /\web.config
+{
+	deny all;
+}
+
+location /
+{
+	valid_referers none blocked *.domain1 domain2 domain3;
+		if($invalid_referer)
+		{
+			return 403;
+		}
+}
+
+root html;
+index index.php index.php3 index.php4 index.php5 index.php6 index.phphtml index.ph index.cgi index.xml index.shtml index.html;
+default_type text/html;
